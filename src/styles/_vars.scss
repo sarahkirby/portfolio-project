@@ -1,0 +1,40 @@
+$c-off-white: rgba(#f1f2f2, .9);
+$c-biome: #2b454b;
+$c-biome-green: #bed9c6;
+$c-kitk: #dbc6c6;
+$c-kitk-gold: #e5d5ac;
+$c-venturus: #202a48;
+$c-venturus-light: #d2d4da;
+$c-pink-invite: #fcf0f2;
+$c-blue-invite: #1d2f46;
+$c-fwaste: #e3484c;
+
+@mixin breakpoint($point) {
+  @if $point == mobile {
+    @media (min-width: 480px) { @content; }
+  }
+  @else if $point == t-portrait {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $point == t-landscape {
+    @media (min-width: 1024px) { @content; }
+  }
+  @else if $point == laptop {
+    @media (min-width: 1366px) { @content; }
+  }
+  // @else if $point == desktop {
+  //   @media (min-width: 1600px)  { @content; }
+  // }
+}
+
+@mixin background-cover( $image ) {
+	background-image: url($image);
+	background-repeat: no-repeat;
+}
+
+@mixin overlay( $color ) {
+	background-color: $color;
+	width: inherit;
+	height: inherit;
+  @include breakpoint(t-landscape) { background-color: transparent; }
+}

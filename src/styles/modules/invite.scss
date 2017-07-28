@@ -1,0 +1,32 @@
+.invite {
+	@include background-cover('../assets/images/invite-blur-sq.jpg');
+	@include breakpoint(t-portrait) { background-image: url('../assets/images/invite-t.jpg'); }
+	// @include breakpoint(t-landscape) { background-image: none; }
+	.overlay {
+		@include overlay(rgba($c-pink-invite, .8));
+		color: $c-blue-invite;
+	}
+	h1 {
+		width: 15rem;
+	}
+	button {
+		color: rgba($c-blue-invite, .7);
+		span {
+			background-position: -20px;
+			opacity: .7;
+		}
+	}
+	.l-section-right {
+		@include background-cover('../assets/images/invite-t.jpg');
+	}
+}
+
+// Tablet Landscape
+@include breakpoint(t-landscape) { 
+	.invite {
+		background-image: none;
+		h1 {
+			width: 25rem;
+		}
+	}
+ }

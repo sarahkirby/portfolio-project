@@ -1,0 +1,26 @@
+.kitk {
+	@include background-cover('../assets/images/kitk-sq.jpg');
+	@include breakpoint(t-portrait) { background-image: url('../assets/images/kitk-t.jpg'); background-position: 0 30%; }
+	.overlay {
+		@include overlay(rgba($c-kitk, .8));
+		color: white;
+	}
+	button {
+		color: white;
+		span {
+			background-position: -10px;
+		}
+	}
+	.l-section-right {
+		@include background-cover('../assets/images/kitk-t.jpg');
+	}
+}
+
+@include breakpoint(t-landscape) { 
+	.kitk {
+		background-image: none;
+		h1, button, .vert-line {
+			color: $c-kitk-gold;
+		}
+	}
+ }

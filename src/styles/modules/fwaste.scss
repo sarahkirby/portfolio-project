@@ -1,0 +1,20 @@
+.fwaste {
+	@include background-cover('');
+	// @include breakpoint(t-landscape) { background-image: none; }
+	.overlay {
+		@include overlay(rgba($c-fwaste, .8));
+		color: $c-off-white;
+	}
+	.l-section-right {
+		@include background-cover('');
+	}
+}
+
+@include breakpoint(t-landscape) { 
+	.fwaste {
+		background-image: none;
+		h1, button, .vert-line {
+			color: $c-fwaste;
+		}
+	}
+ }

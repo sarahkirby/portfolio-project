@@ -1,0 +1,91 @@
+@import './modules/biome';
+@import './modules/fwaste';
+@import './modules/invite';
+@import './modules/kitk';
+@import './modules/venturus';
+
+.rect--fixed {
+	display: none;
+}
+
+// View Work Button
+button {
+	font-family: 'BrandonGrotesqueWeb-Bold';
+	font-size: .9rem;
+	color: $c-off-white;
+	text-transform: uppercase;
+	letter-spacing: .4rem;
+	transition: all 1s ease;
+	span {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		background-image: url('../assets/images/x.svg');
+		opacity: .9;
+	}
+}
+
+.social-icons {
+	visibility: hidden;
+	position: fixed;
+	bottom: 40px;
+	left: 40px;
+	font-size: 1.1rem;
+}
+
+@include breakpoint(t-landscape) { 
+	.rect--fixed {
+		display: block;
+		position: fixed;
+		right: 0;
+		top: 20%;
+		width: 70%;
+		height: 60%;
+		transition: background-color 1s ease;
+		z-index: -1;
+	}
+
+	.rect--image {
+		width: inherit;
+		height: inherit;
+		transition: all 1s ease;
+	}
+	.m-animate {
+		overflow: hidden;
+		h1, .vert-line, button {
+			transform: translateY(130px);
+		}
+
+		&.is-up {
+			h1, .vert-line, button {
+				transform: translateY(0px);
+			}
+		}
+	}
+
+	.vert-line {
+		width: 100px;
+		border-top: 1.25px solid; 
+		margin: 0 1em .2em 0;
+		transition: all 1s ease;
+	}
+
+	.social-icons {
+		visibility: visible;
+		height: 120px;
+		a {
+			width: 80px;
+			height: 30px;
+			transition: all .7s ease;
+			cursor: pointer;
+			&:hover {
+				transform: translateX(10px);
+				opacity: .5;
+			}
+		}
+		.fa {
+			transition: color .5s ease;
+		}
+	}
+
+}

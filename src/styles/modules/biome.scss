@@ -1,0 +1,23 @@
+.biome {
+	@include background-cover('../assets/images/biome-sq.jpg');
+	@include breakpoint(t-portrait) { background-image: url('../assets/images/biome-t.jpg'); background-position: 0 10%; }
+	// @include breakpoint(t-landscape) { background-image: none; }
+	.overlay {
+		@include overlay(rgba(darken($c-biome, 3%), .8));
+		color: $c-off-white;
+	}
+	.l-section-right {
+		@include background-cover('../assets/images/biome-t.jpg');
+		background-position: 10% 0%;
+		@include breakpoint(laptop) { background-position: 0 0; }
+	}
+}
+
+@include breakpoint(t-landscape) { 
+	.biome {
+		background-image: none;
+		h1, button, .vert-line {
+			color: $c-biome-green;
+		}
+	}
+ }

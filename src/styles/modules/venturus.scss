@@ -1,0 +1,21 @@
+.venturus {
+	@include background-cover('../assets/images/venturus-sq.jpg');
+	@include breakpoint(t-portrait) { background-image: url('../assets/images/venturus-t.jpg'); background-position: center; }
+	// @include breakpoint(t-landscape) { background-image: none; }
+	.overlay {
+		@include overlay(rgba($c-venturus, .8));
+		color: $c-off-white;
+	}
+}
+
+@include breakpoint(t-landscape) { 
+	.venturus {
+		background-image: none;
+		h1, h4, button {
+			color: $c-venturus-light;
+		}
+		h4 {
+			opacity: .2;
+		}
+	}
+ }
